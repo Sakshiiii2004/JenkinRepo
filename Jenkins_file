@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('fetch') {
+            steps {
+                echo 'Git fetch'
+                git branch: 'main', url: 'https://github.com/Sakshiiii2004/JenkinRepo.git'
+            }
+        }
+        stage('build') {
+            steps {
+                echo 'Git build'
+                bat 'javac HelloJenkins.java'
+            }
+        }
+        stage('run') {
+            steps {
+                echo 'Git run'
+                bat 'java HelloJenkins'
+            }
+        }
+        
+    }
+}
