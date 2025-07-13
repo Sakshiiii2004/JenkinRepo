@@ -20,6 +20,12 @@ pipeline {
                 bat 'java HelloJenkins'
             }
         }
+        stage('done') {
+            steps {
+                echo 'Git done'
+                   
+            }
+        }
         
     }
 }
